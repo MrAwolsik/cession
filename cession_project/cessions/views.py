@@ -9,18 +9,11 @@ from .models import Author, Publishing_company, Book, Agency, Agent, Cession
 # Create your views here.
 
 def index(request):
-    Books = Book.objects.filter()
-    Cessions = Cession.objects.filter()
+    Cessions = Cession.objects.filter()[:20]
     template = loader.get_template('cessions/index.html')
 
-    paginator = Paginator(Cessions, 10)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-
     Context = {
-        'books': Books,
         'cessions': Cessions,
-        'page_obj': page_obj
     }
 
     return HttpResponse(template.render(Context, request=request))

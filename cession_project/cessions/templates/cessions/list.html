@@ -19,10 +19,6 @@
                         <th scope="col">Langue</th>
                         <th scope="col">Editeur</th>
                         <th scope="col">Agence</th>
-                        <th scope="col">Nom du contact</th>
-                        <th scope="col">Mail</th>
-                        <th scope="col">Envoi pdf</th>
-                        <th scope="col">Offre</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,15 +31,6 @@
                         <td>{{cession.territories.name}}</td>
                         <td>{{cession.publishing_company.name}}</td>
                         <td>{{cession.agency.name}}</td>
-                        {% if cession.agent is not None %}
-                            <td>{{cession.agent.first_name}} {{cession.agent.last_name}}</td>
-                            <td>{{cession.agent.email}}</td>
-                        {% elif cession.publisher_contact is not None %}
-                            <td>{{cession.publisher_contact.first_name}} {{cession.publisher_contact.last_name}}</td>
-                            <td>{{cession.publisher_contact.email}}</td>
-                        {% endif %}
-                        <td>{{cession.pdf_sent_at}}</td>
-                        <td>None</td>
                     </tr>
                 {% endfor %}
                 </tbody>

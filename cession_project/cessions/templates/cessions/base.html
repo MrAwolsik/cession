@@ -10,7 +10,7 @@
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'cessions/css/sb-admin-2.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'cessions/css/dataTables.bootstrap4.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'cessions/css/datatables/dataTables.bootstrap4.min.css' %}" />
     <link rel="shortcut icon" href="#"> 
 
 
@@ -64,26 +64,24 @@
     </a>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'cessions/js/jquery.js' %}"></script>
-    <script src="{% static 'cessions/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'cessions/js/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'cessions/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
     <!-- jQuery Easing -->
-    <script src="{% static 'cessions/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'cessions/js/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Chart JavaScript -->
-    <script src="{% static 'cessions/js/chart.min.js' %}"></script>
+    <script src="{% static 'cessions/js/chart/Chart.min.js' %}"></script>
 
     <!-- fontawesome -->
     <script src="{% static 'cessions/fontawesome/js/all.min.js' %}"></script>
 
     <!-- Page level plugins -->
-    <script type="text/javascript" charset="utf8" src="{% static 'cessions/js/jquery.dataTables.min.js' %}"></script>
-    <script type="text/javascript" charset="utf8" src="{% static 'cessions/js/datatables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'cessions/js/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'cessions/js/datatables/datatables.bootstrap4.min.js' %}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{% static 'cessions/js/sb-admin-2.min.js' %}"></script>
-    <!-- Page level custom scripts -->
-    <script src="{% static 'cessions/js/datatables-demo.js' %}"></script>
     
 </body>
 </html>

@@ -1,0 +1,53 @@
+{# Load static folder #}
+{% load static %}
+
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Cessions</h1>
+<p class="mb-4">Liste des cessions en cours.</p>
+
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Occasion</th>
+                        <th scope="col">Remarque(s)</th>
+                        <th scope="col">Titre du livre</th>
+                        <th scope="col">Langue</th>
+                        <th scope="col">Editeur</th>
+                        <th scope="col">Agence</th>
+                        <th scope="col">Nom du contact</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Envoi pdf</th>
+                        <th scope="col">Offre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for cession in cessions %}
+                    <tr>
+                        <th scope="row">{{cession.id}}</th>
+                        <td>{{cession.occasion}}</td>
+                        <td>{{cession.comment}}</td>
+                        <td>{{cession.book.title}}</td>
+                        <td>{{cession.territories.name}}</td>
+                        <td>{{cession.publishing_company.name}}</td>
+                        <td>{{cession.agency.name}}</td>
+                        {% if cession.agent is not None %}
+                            <td>{{cession.agent.first_name}} {{cession.agent.last_name}}</td>
+                            <td>{{cession.agent.email}}</td>
+                        {% elif cession.publisher_contact is not None %}
+                            <td>{{cession.publisher_contact.first_name}} {{cession.publisher_contact.last_name}}</td>
+                            <td>{{cession.publisher_contact.email}}</td>
+                        {% endif %}
+                        <td>{{cession.pdf_sent_at}}</td>
+                        <td>None</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
